@@ -1,7 +1,27 @@
 <html>
    <body>
       <script>
-         var link="https://7ef4-101-2-164-8.in.ngrok.io/notes";
+         var link="";
+         function GetURLParameter(sParam) { 
+            var sPageURL = window.location.search.substring(1); 
+            var sURLVariables = sPageURL.split('&'); 
+            for (var i = 0; i < sURLVariables.length; i++) { 
+               var sParameterName = sURLVariables[i].split('='); 
+               if (sParameterName[0] == sParam) { 
+                  return sParameterName[1];  
+               }  
+            }  
+         }
+
+         var request=GetURLParameter("r");
+
+         if(request=="notes"){
+            link="https://665f-101-2-164-8.in.ngrok.io/notes";
+         }
+
+         if(request=="txtconv"){
+            link="https://665f-101-2-164-8.in.ngrok.io/test/test.php"
+         }
          window.location.replace(link);
       </script>
    </body>
